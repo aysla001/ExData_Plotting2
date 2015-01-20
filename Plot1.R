@@ -18,7 +18,7 @@
 
 plot1<- function(){
   NEI <- readRDS("summarySCC_PM25.rds")
-  #SCC <- readRDS("Source_Classification_Code.rds")
+  #is there another spec to set similar to na.rm for readRDS?
   # sum Emissions column by year
   # NEISumByYear <- tapply(NEI$Emissions, NEI$year, sum) #returns a vector? is that what we want?
   aggdata <-aggregate(as.numeric(NEI$Emissions), by=list(NEI$year), FUN=sum, na.rm=TRUE)
